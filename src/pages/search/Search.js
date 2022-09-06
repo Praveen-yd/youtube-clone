@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import SideBar from "../../components/sidebar/SideBar";
 import SearchCard from "./SearchCard";
 import TuneOutlinedIcon from "@mui/icons-material/TuneOutlined";
@@ -36,32 +36,30 @@ function Search({ inputSearch }) {
         <hr />
         {searchData &&
           searchData.map((data) => {
-            {
-              if (data.type === "video") {
-                return (
-                  <SearchCard
-                    image={data.video.thumbnails[0].url}
-                    title={data.video.title}
-                    channel={data.video.author.title}
-                    channelImage={data.video.author.avatar[0].url}
-                    views={data.video.stats.views}
-                    timestamp={data.video.publishedTimeText}
-                    discription={data.video.descriptionSnippet}
-                  />
-                );
-              } else {
-                return (
-                  <SearchCard
-                    image={data.playlist.thumbnails[0].url}
-                    title={data.playlist.title}
-                    channel={data.playlist.author.title}
-                    channelImage={data.playlist.author.avatar[0].url}
-                    views={data.playlist.stats.views}
-                    timestamp={data.playlist.publishedTimeText}
-                    discription={data.playlist.descriptionSnippet}
-                  />
-                );
-              }
+            if (data.type === "video") {
+              return (
+                <SearchCard
+                  image={data.video.thumbnails[0].url}
+                  title={data.video.title}
+                  channel={data.video.author.title}
+                  channelImage={data.video.author.avatar[0].url}
+                  views={data.video.stats.views}
+                  timestamp={data.video.publishedTimeText}
+                  discription={data.video.descriptionSnippet}
+                />
+              );
+            } else {
+              return (
+                <SearchCard
+                  image={data.playlist.thumbnails[0].url}
+                  title={data.playlist.title}
+                  channel={data.playlist.author.title}
+                  channelImage={data.playlist.author.avatar[0].url}
+                  views={data.playlist.stats.views}
+                  timestamp={data.playlist.publishedTimeText}
+                  discription={data.playlist.descriptionSnippet}
+                />
+              );
             }
           })}
       </div>

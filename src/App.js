@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState } from "react";
 
 import Home from "./pages/home/Home.js";
 import Search from "./pages/search/Search";

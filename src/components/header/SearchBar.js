@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./SearchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
