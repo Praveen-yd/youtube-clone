@@ -37,7 +37,7 @@ function Search({ inputSearch }) {
         {searchData &&
           searchData.map((data) => {
             {
-              if (data.type == "video") {
+              if (data.type === "video") {
                 return (
                   <SearchCard
                     image={data.video.thumbnails[0].url}
