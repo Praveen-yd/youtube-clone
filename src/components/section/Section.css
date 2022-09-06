@@ -1,0 +1,9 @@
+.section {
+  flex: 0.94;
+  background-color: rgb(250, 250, 250);
+  padding: 20px;
+}
+.section__videocard {
+  display: flex;
+  flex-wrap: wrap;
+}

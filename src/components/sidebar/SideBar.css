@@ -1,0 +1,7 @@
+.sidebar {
+  flex: 0.06;
+  height: 80vh;
+  position: sticky;
+  top: 56px;
+  z-index: 99;
+}

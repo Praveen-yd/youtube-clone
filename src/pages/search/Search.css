@@ -1,0 +1,24 @@
+.search {
+  display: flex;
+}
+.searchbox {
+  padding: 40px 60px;
+  flex: 0.96;
+  background-color: rgb(250, 250, 250);
+}
+.search__filter {
+  display: flex;
+  align-items: center;
+  color: #606060;
+  font-size: xx-small !important;
+}
+.search__filter > h2 {
+  margin-left: 10px;
+}
+.searchbox > hr {
+  height: 1px;
+  border: 0;
+  background-color: lightgray;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
