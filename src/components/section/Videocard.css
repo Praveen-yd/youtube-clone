@@ -2,10 +2,11 @@
   width: 250px;
   margin-bottom: 25px;
   padding: 10px;
+  flex: 1;
 }
 .videocard__thumbnail {
-  height: 140px;
-  width: 250px;
+  height: 150px;
+  object-fit: contain;
   margin-bottom: 5px;
 }
 .videocard__info {

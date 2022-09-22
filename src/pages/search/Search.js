@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import SideBar from "../../components/sidebar/SideBar";
-import SearchCard from "./SearchCard";
+import SearchVideoCard from "./SearchVideoCard";
+import SearchPlaylistCard from "./SearchPlaylistCard";
+import SearchChannelCard from "./SearchChannelCard";
 import TuneOutlinedIcon from "@mui/icons-material/TuneOutlined";
 import "./Search.css";
 
@@ -38,7 +40,7 @@ function Search({ inputSearch }) {
           searchData.map((data) => {
             if (data.type === "video") {
               return (
-                <SearchCard
+                <SearchVideoCard
                   image={data.video.thumbnails[0].url}
                   title={data.video.title}
                   channel={data.video.author.title}
@@ -48,18 +50,20 @@ function Search({ inputSearch }) {
                   discription={data.video.descriptionSnippet}
                 />
               );
-            } else {
+            } else if (data.type === "playlist") {
               return (
-                <SearchCard
+                <SearchPlaylistCard
                   image={data.playlist.thumbnails[0].url}
                   title={data.playlist.title}
                   channel={data.playlist.author.title}
-                  channelImage={data.playlist.author.avatar[0].url}
-                  views={data.playlist.stats.views}
-                  timestamp={data.playlist.publishedTimeText}
-                  discription={data.playlist.descriptionSnippet}
+                  // channelImage={data.playlist.author.avatar[0].url}
+                  // views={data.playlist.stats.views}
+                  // timestamp={data.playlist.publishedTimeText}
+                  // discription={data.playlist.descriptionSnippet}
                 />
               );
+            } else {
+              <SearchChannelCard title={data.channel.title} />;
             }
           })}
       </div>

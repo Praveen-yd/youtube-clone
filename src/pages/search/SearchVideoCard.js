@@ -1,7 +1,7 @@
 import React from "react";
-import "./SearchCard.css";
+import "./SearchVideoCard.css";
 import { Avatar } from "@mui/material";
-function SearchCard({
+function SearchVideoCard({
   image,
   title,
   channel,
@@ -40,4 +40,4 @@ function SearchCard({
   );
 }
 
-export default SearchCard;
+export default SearchVideoCard;
