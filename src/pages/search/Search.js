@@ -21,8 +21,10 @@ function Search({ inputSearch }) {
     fetch(`https://youtube138.p.rapidapi.com/search/?q=${inputSearch}`, options)
       .then((response) => response.json())
       .then((response) => {
-        setSearchData(response.contents);
-        console.log(response);
+        if (response.contents && response.contents.length != 0) {
+          setSearchData(response.contents);
+          console.log(response);
+        }
       })
       .catch((err) => console.error("error:" + err));
   }, [inputSearch]);
@@ -53,7 +55,7 @@ function Search({ inputSearch }) {
             } else if (data.type === "playlist") {
               return (
                 <SearchPlaylistCard
-                  image={data.playlist.thumbnails[0].url}
+                  image={data.playlist.thumbnails[0].url || ""}
                   title={data.playlist.title}
                   channel={data.playlist.author.title}
                   // channelImage={data.playlist.author.avatar[0].url}
@@ -63,7 +65,8 @@ function Search({ inputSearch }) {
                 />
               );
             } else {
-              <SearchChannelCard title={data.channel.title} />;
+              // return <SearchChannelCard title={data.channel.title} />;
+              return <></>;
             }
           })}
       </div>
