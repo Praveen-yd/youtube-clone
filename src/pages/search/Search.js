@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import SideBar from "../../components/sidebar/SideBar";
 import SearchVideoCard from "./SearchVideoCard";
 import SearchPlaylistCard from "./SearchPlaylistCard";
-import SearchChannelCard from "./SearchChannelCard";
 import TuneOutlinedIcon from "@mui/icons-material/TuneOutlined";
 import "./Search.css";
 
@@ -21,7 +20,7 @@ function Search({ inputSearch }) {
     fetch(`https://youtube138.p.rapidapi.com/search/?q=${inputSearch}`, options)
       .then((response) => response.json())
       .then((response) => {
-        if (response.contents && response.contents.length != 0) {
+        if (response.contents && response.contents.length !== 0) {
           setSearchData(response.contents);
           console.log(response);
         }
